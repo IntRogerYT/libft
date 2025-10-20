@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/06 12:45:32 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/10/09 15:30:02 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/10/10 10:46:22 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/10/16 16:02:36 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	return (c >= 0 && c <= 127);
+	char	chr;
+	int		i;
+
+	i = ft_strlen(s);
+	if (!s && !c)
+		return ((char *)&s[i]);
+	chr = (char)c;
+	while (i >= 0)
+	{
+		if (s[i] == chr)
+			return ((char *)&s[i]);
+		i--;
+	}
+	return (NULL);
 }

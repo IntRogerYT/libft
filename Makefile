@@ -1,26 +1,22 @@
 NAME = libft.a
 CC = cc
 FLAGS = -Wall -Werror -Wextra
-FTS = ft_isalpha.c
-OBJECTS = ft_isalpha.o
-HEADER = libft.h
+FTS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c
+
+OBJECTS = $(FTS:%.c= %.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	ar rc $(NAME) $(OBJECTS)
-	ranlib $(NAME)
+	ar rcs $@ $^
 
-$(OBJECTS): $(FTS) $(HEADER)
-	$(CC) $(FLAGS) -c $(FTS) -I.
-
-.PHONY: clean
+%.o: %.c libft.h Makefile
+	$(CC) $(FLAGS) -o $@ -c $<
 clean:
 	rm -f $(OBJECTS)
-
-.PHONY: fclean
 fclean: clean
 	rm -f $(NAME)
 
-.PHONY: re
 re: fclean all
+
+.PHONY: all clean fclean re
