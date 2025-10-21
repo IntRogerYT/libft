@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 13:22:09 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/10/21 11:00:05 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/09/26 14:38:19 by rcamps-v          #+#    #+#             */
+/*   Updated: 2025/10/21 14:09:45 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	num;
-	int	sign;
+	char	*cpy;
+	int		i;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	cpy = malloc(sizeof(*s) * ft_strlen(s) + 1);
+	if (!cpy)
+		return (NULL);
+	while (s[i])
 	{
-		if (nptr[i] == '-')
-			sign = -1;
+		cpy[i] = s[i];
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		num = num * 10 + nptr[i] - '0';
-		i++;
-	}
-	return (num * sign);
+	cpy[i] = '\0';
+	return (cpy);
 }
+/*
+int	main(void)
+{
+	char	*ptr;
+	ptr = ft_strdup("lol");
+	printf("%s", ptr);
+}
+*/
