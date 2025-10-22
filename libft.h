@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:04:50 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/10/21 12:50:22 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/10/22 11:30:29 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,6 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif
