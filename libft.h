@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:04:50 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/10/29 12:45:43 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2025/10/29 14:52:05 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t count);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_striteri(char *s, void (*f_iteri)(unsigned int, char*));
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
